@@ -3,6 +3,9 @@ package main
 import "fmt"
 
 func canConstruct(ransomNote string, magazine string) bool {
+	if len(ransomNote) > len(magazine) {
+		return false
+	}
 	hash := make([]int, 26)
 	for _, v := range magazine {
 		hash[v-'a'] = hash[v-'a'] + 1
